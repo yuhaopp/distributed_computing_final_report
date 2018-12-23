@@ -74,6 +74,8 @@
 \end{tabular}
 \end{table}
 
+\clearpage
+
 \section{项目分析与设计}
 项目需要建立分布式的节点，并可以从任一节点获取文件。我们的设计思路为将存储/计算任务节点与事务处理节点分离，这两部分都可形成分布式。最后，再使用接口的形式，向客户端（web页面）暴露功能。这样即可达到可扩展性、容错性等分布式需求。具体到功能，有如下设计方案。
 \subsection{文件分块与备份}
@@ -114,6 +116,8 @@
 \includegraphics[width=14cm]{storage_architecture}
 \caption{分布式存储系统架构 \label{storage_architecture}}
 \end{figure}
+
+\clearpage
 
 \subsection{分布式计算}
 \subsubsection{整体框架}
@@ -265,8 +269,10 @@ StructField(\mathrm{"day\_id",\ StringType(),True})
 \caption{节点状态（有两个节点宕机），文件不完整 \label{node_5}}
 \end{figure}
 
+\clearpage
+
 \subsection{分布式计算}
-分布式计算的结果，我们以饼图（图\ref{computing_result_1}，\ref{computing_result_2}，\ref{computing_result_3}）和折线图表示。另外，详细结果也将提交在csv文件中。
+分布式计算的结果，我们以饼图（图\ref{computing_result_1}，\ref{computing_result_2}，\ref{computing_result_3}，\ref{duration_distribution}）和折线图（\ref{month_num}）表示。另外，详细结果也将提交在csv文件中。
 \begin{figure}[htb]
 \centering
 \includegraphics[width=10cm]{computing_result_1}
@@ -282,5 +288,26 @@ StructField(\mathrm{"day\_id",\ StringType(),True})
 \includegraphics[width=10cm]{computing_result_3}
 \caption{漫游各运营商占比 \label{computing_result_3}}
 \end{figure}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=10cm]{month_num}
+\caption{当月用户通话次数统计 \label{month_num}}
+\end{figure}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=10cm]{duration_distribution}
+\caption{各时段通话时长占比 \label{duration_distribution}}
+\end{figure}
+
+\section{总结}
+该项目中，我们设计并实现了分布式文件存储系统，以及利用Hadoop和Spark计算框架实现了分布式计算。尽管整个项目还很粗糙，有许多功能还未完善，但重在思考在分布式存储和计算中的框架设计。通过这次项目，我们对分布式存储和计算过程中的任务分配、状态管理、一致性管理等方面都有了更多的思考。
+
+\section{提交内容}
+\begin{itemize}
+\item 15组\_工程文件.rar
+\item 15组\_计算结果.rar
+\item 15组\_项目报告.pdf
+\item 15组\_答辩展示.pptx
+\end{itemize}
 
 \end{document}
